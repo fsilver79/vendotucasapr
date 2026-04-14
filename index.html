@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vende tu Propiedad por Más — Félix Silvestrini Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #1e2124;
+    --white: #f7f4ef;
+    --red: #C41230;
+    --red-dark: #9b0e25;
+    --gray: #8a8680;
+    --light: #d8d5cf;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: linear-gradient(to bottom, rgba(30,33,36,0.97), transparent);
+  }
+  .logo { font-family: 'Playfair Display', serif; font-size: 15px; letter-spacing: 0.08em; color: var(--white); text-decoration: none; line-height: 1.3; }
+  .logo span { display: block; font-size: 10px; font-family: 'DM Sans', sans-serif; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); font-weight: 500; }
+  .nav-cta {
+    background: var(--red); color: var(--white); border: none; padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0.06em;
+    cursor: pointer; text-transform: uppercase; font-weight: 500;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--red-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 120px 40px 80px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(160deg, rgba(196,18,48,0.12) 0%, transparent 50%),
+      linear-gradient(to bottom, transparent 40%, rgba(10,10,10,0.95) 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: linear-gradient(rgba(247,244,239,0.5) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(247,244,239,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--red); font-weight: 500; margin-bottom: 28px;
+    position: relative;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--red); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 8vw, 110px);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .hero h1 em { font-style: italic; color: var(--red); }
+  .hero-sub {
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: rgba(247,244,239,0.6);
+    max-width: 500px;
+    line-height: 1.7;
+    position: relative;
+    margin-bottom: 48px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; position: relative; }
+  .btn-primary {
+    background: var(--red); color: var(--white);
+    padding: 18px 36px; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border: none; cursor: pointer; text-decoration: none;
+    display: inline-block; transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--white); font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.5;
+    text-decoration: none; border-bottom: 1px solid rgba(247,244,239,0.3);
+    padding-bottom: 2px; transition: opacity 0.2s;
+  }
+  .btn-ghost:hover { opacity: 1; }
+
+  /* TICKER */
+  .ticker {
+    background: var(--red);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-block;
+    animation: ticker 25s linear infinite;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
+  }
+  .ticker-inner span { margin: 0 32px; opacity: 0.7; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* RESULTADOS */
+  .section { padding: 100px 40px; }
+  .section-label {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--red); font-weight: 500; margin-bottom: 60px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--red); }
+
+  .resultados-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .resultado-card {
+    padding: 36px 32px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: relative; overflow: hidden;
+    transition: background 0.3s;
+  }
+  .resultado-card:hover { background: rgba(255,255,255,0.03); }
+  .resultado-card:last-child { border-right: none; }
+  .resultado-lugar {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 20px;
+  }
+  .resultado-precio {
+    font-size: 13px; color: rgba(247,244,239,0.4);
+    margin-bottom: 8px; font-weight: 300;
+  }
+  .resultado-cierre {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700; color: var(--white);
+    margin-bottom: 12px;
+  }
+  .resultado-badge {
+    display: inline-block;
+    background: rgba(196,18,48,0.15); color: var(--red);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    padding: 4px 10px; text-transform: uppercase;
+  }
+
+  /* STATS DIGITALES */
+  .stats-section {
+    padding: 0 40px 100px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-block {
+    padding: 60px 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-block:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 900; color: var(--white);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .stat-num em { color: var(--red); font-style: normal; }
+  .stat-label { font-size: 13px; color: var(--gray); letter-spacing: 0.05em; }
+
+  /* OFERTA / PROCESO */
+  .proceso { background: rgba(255,255,255,0.02); }
+  .proceso-inner { max-width: 900px; margin: 0 auto; }
+  .proceso-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700; line-height: 1.1;
+    margin-bottom: 64px;
+  }
+  .proceso-title em { font-style: italic; color: var(--red); }
+  .proceso-steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid; grid-template-columns: 64px 1fr;
+    gap: 32px; padding: 36px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 900;
+    color: rgba(196,18,48,0.25); line-height: 1;
+  }
+  .step-title { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
+  .step-desc { font-size: 15px; color: rgba(247,244,239,0.5); line-height: 1.7; }
+
+  /* ALCANCE */
+  .alcance-block {
+    padding: 80px 40px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .alcance-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 700; line-height: 1.15; margin-bottom: 20px;
+  }
+  .alcance-text h2 em { font-style: italic; color: var(--red); }
+  .alcance-text p { font-size: 15px; color: rgba(247,244,239,0.55); line-height: 1.75; }
+  .alcance-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .alcance-num-card {
+    padding: 28px 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .alcance-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 900;
+    color: var(--white); line-height: 1; margin-bottom: 6px;
+  }
+  .alcance-num em { color: var(--red); font-style: normal; font-size: 24px; }
+  .alcance-desc { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* FORM / CTA */
+  .form-section {
+    background: #c8c4be; color: #1a1a1a;
+    padding: 100px 40px;
+  }
+  .form-inner { max-width: 640px; margin: 0 auto; }
+  .form-eyebrow {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--red); font-weight: 500; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .form-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--red); }
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900; line-height: 1.05;
+    margin-bottom: 12px; color: #0a0a0a;
+  }
+  .form-title em { font-style: italic; color: var(--red); }
+  .form-sub { font-size: 15px; color: #555; margin-bottom: 48px; line-height: 1.6; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 500; margin-bottom: 8px; color: #333;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 16px 18px;
+    border: 1px solid #ccc; background: transparent;
+    font-family: 'DM Sans', sans-serif; font-size: 15px; color: #111;
+    outline: none; appearance: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--red);
+  }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .btn-submit {
+    width: 100%; background: #1e2124; color: #f7f4ef;
+    border: none; padding: 20px; font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s; margin-top: 8px;
+  }
+  .btn-submit:hover { background: var(--red); }
+  .form-note { font-size: 12px; color: #999; text-align: center; margin-top: 16px; }
+
+
+  /* TESTIMONIOS */
+  .testimonios { padding: 100px 40px; background: rgba(0,0,0,0.15); }
+  .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 0; }
+  .testimonio-card {
+    background: var(--black); border: 1px solid rgba(255,255,255,0.08);
+    padding: 40px 36px; position: relative;
+  }
+  .testimonio-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px; line-height: 0.6;
+    color: var(--red); margin-bottom: 20px; display: block;
+    font-weight: 900;
+  }
+  .testimonio-text {
+    font-size: 15px; line-height: 1.75; color: rgba(247,244,239,0.75);
+    margin-bottom: 28px; font-style: italic;
+  }
+  .testimonio-autor { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; color: var(--red); }
+  .testimonio-detalle { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+  /* FOOTER */
+  footer {
+    padding: 40px; border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  footer p { font-size: 12px; color: var(--gray); }
+  footer a { color: var(--gray); text-decoration: none; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.8s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+  .delay-4 { animation-delay: 0.55s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .hero { padding: 100px 20px 60px; }
+    .section { padding: 60px 20px; }
+    .stats-section { grid-template-columns: 1fr 1fr; padding: 0 20px 60px; }
+    .stat-block { padding: 40px 20px; }
+    .alcance-block { grid-template-columns: 1fr; padding: 60px 20px; gap: 48px; }
+    .form-section { padding: 60px 20px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 30px 20px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    Félix Silvestrini
+    <span>Real Estate · Puerto Rico</span>
+  </a>
+  <a href="https://agent.kwpuertorico.com/felixsilvestrini" target="_blank" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(247,244,239,0.6);text-decoration:none;margin-right:8px;">Ver propiedades</a><a href="#analisis" class="nav-cta">Análisis estratégico gratis</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <p class="hero-eyebrow fade-up">Vendedores en Puerto Rico</p>
+  <h1 class="fade-up delay-1">
+    Vendemos<br>
+    su propiedad<br>
+    por <em>más.</em>
+  </h1>
+  <p class="hero-sub fade-up delay-2">
+    No solo publicamos su casa. Creamos la estrategia correcta para que el comprador perciba valor y esté dispuesto a pagar más.
+  </p>
+  <div class="hero-actions fade-up delay-3">
+    <a href="#analisis" class="btn-primary">Solicitar análisis estratégico gratis</a>
+    <a href="#resultados" class="btn-ghost">Ver resultados reales</a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Precio correcto desde el primer día</span>
+    <span>·</span>
+    <span>Fotografía profesional</span>
+    <span>·</span>
+    <span>MLS + Meta Ads</span>
+    <span>·</span>
+    <span>Negociación firme</span>
+    <span>·</span>
+    <span>Menos tiempo en el mercado</span>
+    <span>·</span>
+    <span>Máximo valor para su inversión</span>
+    <span>·</span>
+    <span>Precio correcto desde el primer día</span>
+    <span>·</span>
+    <span>Fotografía profesional</span>
+    <span>·</span>
+    <span>MLS + Meta Ads</span>
+    <span>·</span>
+    <span>Negociación firme</span>
+    <span>·</span>
+    <span>Menos tiempo en el mercado</span>
+    <span>·</span>
+    <span>Máximo valor para su inversión</span>
+    <span>·</span>
+  </div>
+</div>
+
+<!-- RESULTADOS -->
+<section class="section" id="resultados">
+  <p class="section-label">Resultados reales — casos comprobados</p>
+  <div class="resultados-grid">
+    <div class="resultado-card">
+      <p class="resultado-lugar">Urb. Alto Apolo · Guaynabo</p>
+      <p class="resultado-precio">Precio de lista: $550,000</p>
+      <p class="resultado-cierre">$565,000</p>
+      <span class="resultado-badge">+$15,000 sobre lista</span>
+    </div>
+    <div class="resultado-card">
+      <p class="resultado-lugar">Urb. Hacienda Guamaní</p>
+      <p class="resultado-precio">Precio de lista: $150,000</p>
+      <p class="resultado-cierre">$158,000</p>
+      <span class="resultado-badge">+$8,000 sobre lista</span>
+    </div>
+    <div class="resultado-card">
+      <p class="resultado-lugar">63 Calle Buenos Aires</p>
+      <p class="resultado-precio">Precio de lista: $90,000</p>
+      <p class="resultado-cierre">$100,000</p>
+      <span class="resultado-badge">+$10,000 sobre lista</span>
+    </div>
+    <div class="resultado-card">
+      <p class="resultado-lugar">Urb. Reyna De los Ángeles</p>
+      <p class="resultado-precio">Precio de lista: $215,000</p>
+      <p class="resultado-cierre">$222,000</p>
+      <span class="resultado-badge">+$7,000 sobre lista</span>
+    </div>
+  </div>
+  <p style="margin-top: 24px; font-size: 13px; color: var(--gray); max-width: 560px; line-height: 1.7;">
+    Estos resultados no son casualidad. Son el resultado de precio correcto, presentación estratégica y negociación firme en cada transacción.
+  </p>
+</section>
+
+<!-- STATS DIGITALES -->
+<div class="stats-section">
+  <div class="stat-block">
+    <p class="stat-num">72<em>K</em></p>
+    <p class="stat-label">Visualizaciones en los últimos 7 días</p>
+  </div>
+  <div class="stat-block">
+    <p class="stat-num">28<em>K</em></p>
+    <p class="stat-label">Personas alcanzadas en Facebook e Instagram</p>
+  </div>
+  <div class="stat-block">
+    <p class="stat-num">5<em>,850</em></p>
+    <p class="stat-label">Interacciones reales con su contenido</p>
+  </div>
+  <div class="stat-block" style="border-right: none;">
+    <p class="stat-num">+81</p>
+    <p class="stat-label">Nuevos seguidores netos esta semana</p>
+  </div>
+</div>
+
+<!-- PROCESO -->
+<section class="section proceso">
+  <div class="proceso-inner">
+    <p class="section-label">Cómo lo logramos</p>
+    <h2 class="proceso-title">
+      Tres pasos para vender<br>
+      su propiedad <em>por más</em>
+    </h2>
+    <div class="proceso-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <p class="step-title">Precio y estrategia</p>
+          <p class="step-desc">Análisis real del mercado (CMA), precio competitivo desde el primer día y estrategia diseñada para generar interés inmediato — no para solo publicar y esperar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <p class="step-title">Presentación que vende</p>
+          <p class="step-desc">Fotografía profesional, recomendaciones para mostrar la propiedad en su mejor versión y ajustes simples que aumentan el valor percibido antes de cada visita.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <p class="step-title">Mercadeo profesional</p>
+          <p class="step-desc">Publicación en MLS y portales, promoción directa en Meta Ads y exposición a compradores activos e inversionistas. Audiencia real, no promesas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALCANCE -->
+<section class="alcance-block">
+  <div class="alcance-text">
+    <h2>Su propiedad frente a <em>miles</em> de compradores calificados</h2>
+    <p>Utilizamos la misma plataforma de Meta Ads que las grandes empresas, con segmentación precisa para llegar a compradores activos en toda Puerto Rico. No publicamos y esperamos — construimos demanda.</p>
+  </div>
+  <div class="alcance-nums">
+    <div class="alcance-num-card">
+      <p class="alcance-num">72<em>K</em></p>
+      <p class="alcance-desc">Visualizaciones / semana</p>
+    </div>
+    <div class="alcance-num-card">
+      <p class="alcance-num">28<em>K</em></p>
+      <p class="alcance-desc">Personas alcanzadas</p>
+    </div>
+    <div class="alcance-num-card">
+      <p class="alcance-num">5<em>.8K</em></p>
+      <p class="alcance-desc">Interacciones reales</p>
+    </div>
+    <div class="alcance-num-card">
+      <p class="alcance-num">PR</p>
+      <p class="alcance-desc">Toda la isla</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIOS -->
+<section class="testimonios">
+  <p class="section-label">Lo que dicen nuestros clientes</p>
+  <div class="testimonios-grid">
+    <div class="testimonio-card">
+      <span class="testimonio-quote">"</span>
+      <p class="testimonio-text">Pensé que vendería… pero nunca así. En menos de 3 semanas Félix cerró mi propiedad $7,000 por encima del precio de listado. Estrategia, ejecución y resultados reales. Si quieres vender bien y rápido, él es el indicado.</p>
+      <p class="testimonio-autor">Emilio Manfredy</p>
+      <p class="testimonio-detalle">+$7,000 sobre precio de lista · 3 semanas</p>
+    </div>
+    <div class="testimonio-card">
+      <span class="testimonio-quote">"</span>
+      <p class="testimonio-text">Félix dijo que sería rápido… pero nunca pensé que tanto. Mi propiedad en Hacienda Guamaní se vendió en menos de 24 horas y cerró en solo 8 días. Proceso ágil, sin estrés y con resultados reales. Totalmente recomendado si quieres vender tu casa rápido en Puerto Rico.</p>
+      <p class="testimonio-autor">Margarita Cruz</p>
+      <p class="testimonio-detalle">Hacienda Guamaní · Vendida en 24 horas · Cerrada en 8 días</p>
+    </div>
+    <div class="testimonio-card">
+      <span class="testimonio-quote">"</span>
+      <p class="testimonio-text">Excelente experiencia trabajando con Félix Silvestrini Real Estate. Vendió mi propiedad en Urb. Hacienda Guamaní, Guayama en menos de 45 días y logró $8,000 por encima del precio de listado. Su conocimiento del mercado, estrategia de venta y comunicación constante hicieron todo el proceso rápido y sin complicaciones.</p>
+      <p class="testimonio-autor">Alma Rivera</p>
+      <p class="testimonio-detalle">Urb. Hacienda Guamaní, Guayama · +$8,000 sobre lista · 45 días</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section class="form-section" id="analisis">
+  <div class="form-inner">
+    <p class="form-eyebrow">Sin costo · Sin compromiso · Toda la isla</p>
+    <h2 class="form-title">
+      Solicite su<br>
+      análisis <em>estratégico gratis</em>
+    </h2>
+    <p class="form-sub">Cuéntenos sobre su propiedad y le contactamos en menos de 24 horas con un análisis real del mercado y una estrategia personalizada.</p>
+
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Juan García" required>
+        </div>
+        <div class="form-group">
+          <label>Teléfono / WhatsApp</label>
+          <input type="tel" placeholder="(787) 000-0000" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="juan@correo.com" required>
+      </div>
+      <div class="form-group">
+        <label>Dirección de la propiedad</label>
+        <input type="text" placeholder="Urb., calle, número · Pueblo, PR" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tipo de propiedad</label>
+          <select required>
+            <option value="" disabled selected>Seleccionar...</option>
+            <option>Casa residencial</option>
+            <option>Apartamento / Condo</option>
+            <option>Terreno</option>
+            <option>Propiedad comercial</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>¿Cuándo piensa vender?</label>
+          <select>
+            <option value="" disabled selected>Seleccionar...</option>
+            <option>Lo antes posible</option>
+            <option>En los próximos 3 meses</option>
+            <option>En 3 a 6 meses</option>
+            <option>Solo estoy explorando</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>¿Algo más que deba saber? (opcional)</label>
+        <textarea placeholder="Condición de la propiedad, hipoteca pendiente, situación especial..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Solicitar análisis estratégico gratis →</button>
+      <p class="form-note">Sus datos son confidenciales. Le contactaremos en menos de 24 horas.</p>
+    </form>
+
+    <div id="success-msg" style="display:none; text-align: center; padding: 60px 0;">
+      <p style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--black); margin-bottom: 12px;">¡Recibido!</p>
+      <p style="font-size: 15px; color: #666; line-height: 1.7;">Le contactaremos en las próximas 24 horas.<br>Mientras tanto, puede escribirnos directamente por WhatsApp.</p>
+      <a href="https://wa.me/17875070107" style="display: inline-block; margin-top: 28px; background: var(--black); color: var(--white); padding: 16px 32px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">(787) 507-0107 · Escribir por WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <p style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 4px;">Félix Silvestrini Real Estate</p>
+    <p>Puerto Rico · Toda la isla · (787) 507-0107</p>
+  </div>
+  <div style="display: flex; gap: 24px;">
+    <a href="https://wa.me/17875070107" target="_blank">WhatsApp</a>
+    <a href="/cdn-cgi/l/email-protection#fc9a99909584bc99919d9590d29f9391">Email</a>
+    <a href="https://instagram.com/felixsilvestrinirealstate" target="_blank">Instagram</a>
+    <a href="https://facebook.com/FelixSilvestriniRealEstate" target="_blank">Facebook</a>
+  </div>
+  <p>© 2025 Félix Silvestrini Real Estate</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.querySelector('form').style.display = 'none';
+  document.getElementById('success-msg').style.
