@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --black: #1e2124;
     --white: #f7f4ef;
@@ -17,9 +17,9 @@
     --gray: #8a8680;
     --light: #d8d5cf;
   }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background: var(--black);
     color: var(--white);
@@ -27,7 +27,7 @@
     font-weight: 300;
     overflow-x: hidden;
   }
-
+ 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -44,7 +44,7 @@
     text-decoration: none; transition: background 0.2s;
   }
   .nav-cta:hover { background: var(--red-dark); }
-
+ 
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -106,7 +106,7 @@
     padding-bottom: 2px; transition: opacity 0.2s;
   }
   .btn-ghost:hover { opacity: 1; }
-
+ 
   /* TICKER */
   .ticker {
     background: var(--red);
@@ -121,7 +121,7 @@
   }
   .ticker-inner span { margin: 0 32px; opacity: 0.7; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
+ 
   /* RESULTADOS */
   .section { padding: 100px 40px; }
   .section-label {
@@ -130,7 +130,7 @@
     display: flex; align-items: center; gap: 12px;
   }
   .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--red); }
-
+ 
   .resultados-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px;
     border: 1px solid rgba(255,255,255,0.08);
@@ -162,7 +162,7 @@
     font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
     padding: 4px 10px; text-transform: uppercase;
   }
-
+ 
   /* STATS DIGITALES */
   .stats-section {
     padding: 0 40px 100px;
@@ -184,7 +184,7 @@
   }
   .stat-num em { color: var(--red); font-style: normal; }
   .stat-label { font-size: 13px; color: var(--gray); letter-spacing: 0.05em; }
-
+ 
   /* OFERTA / PROCESO */
   .proceso { background: rgba(255,255,255,0.02); }
   .proceso-inner { max-width: 900px; margin: 0 auto; }
@@ -210,7 +210,7 @@
   }
   .step-title { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
   .step-desc { font-size: 15px; color: rgba(247,244,239,0.5); line-height: 1.7; }
-
+ 
   /* ALCANCE */
   .alcance-block {
     padding: 80px 40px;
@@ -236,7 +236,7 @@
   }
   .alcance-num em { color: var(--red); font-style: normal; font-size: 24px; }
   .alcance-desc { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
-
+ 
   /* FORM / CTA */
   .form-section {
     background: #c8c4be; color: #1a1a1a;
@@ -283,8 +283,8 @@
   }
   .btn-submit:hover { background: var(--red); }
   .form-note { font-size: 12px; color: #999; text-align: center; margin-top: 16px; }
-
-
+ 
+ 
   /* TESTIMONIOS */
   .testimonios { padding: 100px 40px; background: rgba(0,0,0,0.15); }
   .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 0; }
@@ -304,7 +304,7 @@
   }
   .testimonio-autor { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; color: var(--red); }
   .testimonio-detalle { font-size: 12px; color: var(--gray); margin-top: 4px; }
-
+ 
   /* FOOTER */
   footer {
     padding: 40px; border-top: 1px solid rgba(255,255,255,0.08);
@@ -313,7 +313,7 @@
   }
   footer p { font-size: 12px; color: var(--gray); }
   footer a { color: var(--gray); text-decoration: none; }
-
+ 
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -324,7 +324,7 @@
   .delay-2 { animation-delay: 0.25s; }
   .delay-3 { animation-delay: 0.4s; }
   .delay-4 { animation-delay: 0.55s; }
-
+ 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
@@ -340,7 +340,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">
@@ -349,7 +349,7 @@
   </a>
   <a href="https://agent.kwpuertorico.com/felixsilvestrini" target="_blank" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(247,244,239,0.6);text-decoration:none;margin-right:8px;">Ver propiedades</a><a href="#analisis" class="nav-cta">Análisis estratégico gratis</a>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -368,7 +368,7 @@
     <a href="#resultados" class="btn-ghost">Ver resultados reales</a>
   </div>
 </section>
-
+ 
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
@@ -398,7 +398,7 @@
     <span>·</span>
   </div>
 </div>
-
+ 
 <!-- RESULTADOS -->
 <section class="section" id="resultados">
   <p class="section-label">Resultados reales — casos comprobados</p>
@@ -432,7 +432,7 @@
     Estos resultados no son casualidad. Son el resultado de precio correcto, presentación estratégica y negociación firme en cada transacción.
   </p>
 </section>
-
+ 
 <!-- STATS DIGITALES -->
 <div class="stats-section">
   <div class="stat-block">
@@ -452,7 +452,7 @@
     <p class="stat-label">Nuevos seguidores netos esta semana</p>
   </div>
 </div>
-
+ 
 <!-- PROCESO -->
 <section class="section proceso">
   <div class="proceso-inner">
@@ -486,7 +486,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ALCANCE -->
 <section class="alcance-block">
   <div class="alcance-text">
@@ -512,8 +512,8 @@
     </div>
   </div>
 </section>
-
-
+ 
+ 
 <!-- TESTIMONIOS -->
 <section class="testimonios">
   <p class="section-label">Lo que dicen nuestros clientes</p>
@@ -538,7 +538,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FORMULARIO -->
 <section class="form-section" id="analisis">
   <div class="form-inner">
@@ -548,7 +548,7 @@
       análisis <em>estratégico gratis</em>
     </h2>
     <p class="form-sub">Cuéntenos sobre su propiedad y le contactamos en menos de 24 horas con un análisis real del mercado y una estrategia personalizada.</p>
-
+ 
     <form onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-group">
@@ -574,7 +574,7 @@
           <select id="f-tipo" required>
             <option value="" disabled selected>Seleccionar...</option>
             <option>Casa residencial</option>
-	    <option>Multi Familiar</option>
+			<option>Multi Familiar</option>
             <option>Apartamento / Condo</option>
             <option>Terreno</option>
             <option>Propiedad comercial</option>
@@ -599,7 +599,7 @@
       <button type="submit" class="btn-submit">Solicitar análisis estratégico gratis →</button>
       <p class="form-note">Sus datos son confidenciales. Le contactaremos en menos de 24 horas.</p>
     </form>
-
+ 
     <div id="success-msg" style="display:none; text-align: center; padding: 60px 0;">
       <p style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--black); margin-bottom: 12px;">¡Recibido!</p>
       <p style="font-size: 15px; color: #666; line-height: 1.7;">Le contactaremos en las próximas 24 horas.<br>Mientras tanto, puede escribirnos directamente por WhatsApp.</p>
@@ -607,7 +607,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div>
@@ -622,9 +622,41 @@
   </div>
   <p>© 2025 Félix Silvestrini Real Estate</p>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+ 
+<script>
 function handleSubmit(e) {
   e.preventDefault();
-  document.querySelector('form').style.display = 'none';
-  document.getElementById('success-msg').style.
+ 
+  var btn = document.querySelector('.btn-submit');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+ 
+  var data = {
+    nombre:    document.getElementById('f-nombre').value,
+    telefono:  document.getElementById('f-telefono').value,
+    email:     document.getElementById('f-email').value,
+    direccion: document.getElementById('f-direccion').value,
+    tipo:      document.getElementById('f-tipo').value,
+    cuando:    document.getElementById('f-cuando') ? document.getElementById('f-cuando').value : 'No especificado',
+    notas:     document.getElementById('f-notas') ? document.getElementById('f-notas').value : 'Ninguna',
+    fuente:    'vendotucasapr.com'
+  };
+ 
+  fetch('https://hooks.zapier.com/hooks/catch/21808403/ujy0e11/', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(function() {
+    document.querySelector('form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('success-msg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  })
+  .catch(function() {
+    document.querySelector('form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('success-msg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+</script>
+</body>
+</html>
