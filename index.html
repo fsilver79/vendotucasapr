@@ -553,25 +553,25 @@
       <div class="form-row">
         <div class="form-group">
           <label>Nombre completo</label>
-          <input type="text" placeholder="Juan García" required>
+          <input type="text" id="f-nombre" placeholder="Juan García" required>
         </div>
         <div class="form-group">
           <label>Teléfono / WhatsApp</label>
-          <input type="tel" placeholder="(787) 000-0000" required>
+          <input type="tel" id="f-telefono" placeholder="(787) 000-0000" required>
         </div>
       </div>
       <div class="form-group">
         <label>Correo electrónico</label>
-        <input type="email" placeholder="juan@correo.com" required>
+        <input type="email" id="f-email" placeholder="juan@correo.com" required>
       </div>
       <div class="form-group">
         <label>Dirección de la propiedad</label>
-        <input type="text" placeholder="Urb., calle, número · Pueblo, PR" required>
+        <input type="text" id="f-direccion" placeholder="Urb., calle, número · Pueblo, PR" required>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>Tipo de propiedad</label>
-          <select required>
+          <select id="f-tipo" required>
             <option value="" disabled selected>Seleccionar...</option>
             <option>Casa residencial</option>
             <option>Apartamento / Condo</option>
@@ -582,7 +582,7 @@
         </div>
         <div class="form-group">
           <label>¿Cuándo piensa vender?</label>
-          <select>
+          <select id="f-cuando">
             <option value="" disabled selected>Seleccionar...</option>
             <option>Lo antes posible</option>
             <option>En los próximos 3 meses</option>
@@ -593,7 +593,7 @@
       </div>
       <div class="form-group">
         <label>¿Algo más que deba saber? (opcional)</label>
-        <textarea placeholder="Condición de la propiedad, hipoteca pendiente, situación especial..."></textarea>
+        <textarea id="f-notas" placeholder="Condición de la propiedad, hipoteca pendiente, situación especial..."></textarea>
       </div>
       <button type="submit" class="btn-submit">Solicitar análisis estratégico gratis →</button>
       <p class="form-note">Sus datos son confidenciales. Le contactaremos en menos de 24 horas.</p>
