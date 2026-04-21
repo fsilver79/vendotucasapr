@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   :root {
     --black: #1e2124;
     --white: #f7f4ef;
@@ -17,9 +17,9 @@
     --gray: #8a8680;
     --light: #d8d5cf;
   }
- 
+
   html { scroll-behavior: smooth; }
- 
+
   body {
     background: var(--black);
     color: var(--white);
@@ -27,7 +27,7 @@
     font-weight: 300;
     overflow-x: hidden;
   }
- 
+
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -35,8 +35,8 @@
     display: flex; justify-content: space-between; align-items: center;
     background: linear-gradient(to bottom, rgba(30,33,36,0.97), transparent);
   }
-  .logo { font-family: 'Playfair Display', serif; font-size: 15px; letter-spacing: 0.08em; color: var(--white); text-decoration: none; line-height: 1.3; }
-  .logo span { display: block; font-size: 10px; font-family: 'DM Sans', sans-serif; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); font-weight: 500; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 19px; letter-spacing: 0.08em; color: var(--white); text-decoration: none; line-height: 1.3; }
+  .logo span { display: block; font-size: 12px; font-family: 'DM Sans', sans-serif; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); font-weight: 500; }
   .nav-cta {
     background: var(--red); color: var(--white); border: none; padding: 10px 22px;
     font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0.06em;
@@ -44,7 +44,7 @@
     text-decoration: none; transition: background 0.2s;
   }
   .nav-cta:hover { background: var(--red-dark); }
- 
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -106,7 +106,7 @@
     padding-bottom: 2px; transition: opacity 0.2s;
   }
   .btn-ghost:hover { opacity: 1; }
- 
+
   /* TICKER */
   .ticker {
     background: var(--red);
@@ -121,7 +121,7 @@
   }
   .ticker-inner span { margin: 0 32px; opacity: 0.7; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
- 
+
   /* RESULTADOS */
   .section { padding: 100px 40px; }
   .section-label {
@@ -130,7 +130,7 @@
     display: flex; align-items: center; gap: 12px;
   }
   .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--red); }
- 
+
   .resultados-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px;
     border: 1px solid rgba(255,255,255,0.08);
@@ -162,7 +162,7 @@
     font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
     padding: 4px 10px; text-transform: uppercase;
   }
- 
+
   /* STATS DIGITALES */
   .stats-section {
     padding: 0 40px 100px;
@@ -184,7 +184,7 @@
   }
   .stat-num em { color: var(--red); font-style: normal; }
   .stat-label { font-size: 13px; color: var(--gray); letter-spacing: 0.05em; }
- 
+
   /* OFERTA / PROCESO */
   .proceso { background: rgba(255,255,255,0.02); }
   .proceso-inner { max-width: 900px; margin: 0 auto; }
@@ -210,7 +210,7 @@
   }
   .step-title { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
   .step-desc { font-size: 15px; color: rgba(247,244,239,0.5); line-height: 1.7; }
- 
+
   /* ALCANCE */
   .alcance-block {
     padding: 80px 40px;
@@ -236,7 +236,7 @@
   }
   .alcance-num em { color: var(--red); font-style: normal; font-size: 24px; }
   .alcance-desc { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
- 
+
   /* FORM / CTA */
   .form-section {
     background: #c8c4be; color: #1a1a1a;
@@ -283,8 +283,8 @@
   }
   .btn-submit:hover { background: var(--red); }
   .form-note { font-size: 12px; color: #999; text-align: center; margin-top: 16px; }
- 
- 
+
+
   /* TESTIMONIOS */
   .testimonios { padding: 100px 40px; background: rgba(0,0,0,0.15); }
   .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 0; }
@@ -304,7 +304,7 @@
   }
   .testimonio-autor { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; color: var(--red); }
   .testimonio-detalle { font-size: 12px; color: var(--gray); margin-top: 4px; }
- 
+
   /* FOOTER */
   footer {
     padding: 40px; border-top: 1px solid rgba(255,255,255,0.08);
@@ -313,7 +313,7 @@
   }
   footer p { font-size: 12px; color: var(--gray); }
   footer a { color: var(--gray); text-decoration: none; }
- 
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -324,7 +324,7 @@
   .delay-2 { animation-delay: 0.25s; }
   .delay-3 { animation-delay: 0.4s; }
   .delay-4 { animation-delay: 0.55s; }
- 
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
@@ -340,16 +340,17 @@
 </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">
     Félix Silvestrini
     <span>Real Estate · Puerto Rico</span>
+    <span style="font-size:11px;letter-spacing:0.15em;color:rgba(247,244,239,0.55);text-transform:uppercase;">Lic. C-23200</span>
   </a>
-  <a href="https://agent.kwpuertorico.com/felixsilvestrini" target="_blank" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(247,244,239,0.6);text-decoration:none;margin-right:8px;">Ver propiedades</a><a href="#analisis" class="nav-cta">Análisis estratégico gratis</a>
+  <a href="#analisis" class="nav-cta">Análisis estratégico gratis</a>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -368,7 +369,7 @@
     <a href="#resultados" class="btn-ghost">Ver resultados reales</a>
   </div>
 </section>
- 
+
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
@@ -398,7 +399,7 @@
     <span>·</span>
   </div>
 </div>
- 
+
 <!-- RESULTADOS -->
 <section class="section" id="resultados">
   <p class="section-label">Resultados reales — casos comprobados</p>
@@ -432,7 +433,7 @@
     Estos resultados no son casualidad. Son el resultado de precio correcto, presentación estratégica y negociación firme en cada transacción.
   </p>
 </section>
- 
+
 <!-- STATS DIGITALES -->
 <div class="stats-section">
   <div class="stat-block">
@@ -452,7 +453,7 @@
     <p class="stat-label">Nuevos seguidores netos esta semana</p>
   </div>
 </div>
- 
+
 <!-- PROCESO -->
 <section class="section proceso">
   <div class="proceso-inner">
@@ -486,7 +487,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ALCANCE -->
 <section class="alcance-block">
   <div class="alcance-text">
@@ -512,8 +513,8 @@
     </div>
   </div>
 </section>
- 
- 
+
+
 <!-- TESTIMONIOS -->
 <section class="testimonios">
   <p class="section-label">Lo que dicen nuestros clientes</p>
@@ -538,7 +539,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- FORMULARIO -->
 <section class="form-section" id="analisis">
   <div class="form-inner">
@@ -548,7 +549,7 @@
       análisis <em>estratégico gratis</em>
     </h2>
     <p class="form-sub">Cuéntenos sobre su propiedad y le contactamos en menos de 24 horas con un análisis real del mercado y una estrategia personalizada.</p>
- 
+
     <form onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-group">
@@ -574,7 +575,6 @@
           <select id="f-tipo" required>
             <option value="" disabled selected>Seleccionar...</option>
             <option>Casa residencial</option>
-            <option>Multy Familiar</option>
             <option>Apartamento / Condo</option>
             <option>Terreno</option>
             <option>Propiedad comercial</option>
@@ -599,7 +599,7 @@
       <button type="submit" class="btn-submit">Solicitar análisis estratégico gratis →</button>
       <p class="form-note">Sus datos son confidenciales. Le contactaremos en menos de 24 horas.</p>
     </form>
- 
+
     <div id="success-msg" style="display:none; text-align: center; padding: 60px 0;">
       <p style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--black); margin-bottom: 12px;">¡Recibido!</p>
       <p style="font-size: 15px; color: #666; line-height: 1.7;">Le contactaremos en las próximas 24 horas.<br>Mientras tanto, puede escribirnos directamente por WhatsApp.</p>
@@ -607,11 +607,55 @@
     </div>
   </div>
 </section>
- 
+
+
+<!-- COMPRADORES -->
+<section style="padding: 100px 40px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.08);">
+  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <div>
+      <p style="font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+        <span style="display:block;width:32px;height:1px;background:var(--red);"></span>
+        Para compradores
+      </p>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; line-height: 1.15; margin-bottom: 20px; color: var(--white);">
+        ¿Buscando tu <em style="font-style:italic;color:var(--red);">próxima propiedad</em> en Puerto Rico?
+      </h2>
+      <p style="font-size: 15px; color: rgba(247,244,239,0.55); line-height: 1.75; margin-bottom: 36px;">
+        Tenemos propiedades disponibles en toda la isla — residencial, comercial y terrenos. Encuentra tu próxima inversión o el hogar de tus sueños.
+      </p>
+      <a href="https://agent.kwpuertorico.com/felixsilvestrini" target="_blank" style="display:inline-block;background:var(--white);color:var(--black);padding:18px 36px;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Ver propiedades disponibles →</a>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08);">
+        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--white); line-height: 1; margin-bottom: 8px;">PR</p>
+        <p style="font-size: 14px; color: rgba(247,244,239,0.65); text-transform: uppercase; letter-spacing: 0.08em;">Toda la isla</p>
+      </div>
+      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08);">
+        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--white); line-height: 1; margin-bottom: 8px;">KW</p>
+        <p style="font-size: 14px; color: rgba(247,244,239,0.65); text-transform: uppercase; letter-spacing: 0.08em;">Keller Williams</p>
+      </div>
+      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08);">
+        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--white); line-height: 1; margin-bottom: 8px;">787</p>
+        <p style="font-size: 14px; color: rgba(247,244,239,0.65); text-transform: uppercase; letter-spacing: 0.08em;">507-0107</p>
+      </div>
+      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08);">
+        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 8px;">∞</p>
+        <p style="font-size: 14px; color: rgba(247,244,239,0.65); text-transform: uppercase; letter-spacing: 0.08em;">Opciones disponibles</p>
+      </div>
+    </div>
+  </div>
+  <style>
+    @media (max-width: 768px) {
+      #compradores-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    }
+  </style>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div>
-    <p style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 4px;">Félix Silvestrini Real Estate</p>
+    <p style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 2px;">Félix Silvestrini Real Estate</p>
+    <p style="font-size: 11px; color: var(--gray); margin-bottom: 4px; letter-spacing: 0.1em;">Lic. C-23200</p>
     <p>Puerto Rico · Toda la isla · (787) 507-0107</p>
   </div>
   <div style="display: flex; gap: 24px;">
@@ -622,15 +666,15 @@
   </div>
   <p>© 2025 Félix Silvestrini Real Estate</p>
 </footer>
- 
+
 <script>
 function handleSubmit(e) {
   e.preventDefault();
- 
+
   var btn = document.querySelector('.btn-submit');
   btn.textContent = 'Enviando...';
   btn.disabled = true;
- 
+
   var data = {
     nombre:    document.getElementById('f-nombre').value,
     telefono:  document.getElementById('f-telefono').value,
@@ -641,10 +685,10 @@ function handleSubmit(e) {
     notas:     document.getElementById('f-notas') ? document.getElementById('f-notas').value : 'Ninguna',
     fuente:    'vendotucasapr.com'
   };
- 
+
   var formData = new FormData();
   for (var key in data) { formData.append(key, data[key]); }
- 
+
   fetch('https://hook.us2.make.com/qr2xf7tvr2wemnkfvo98ora7f1uyg6aj', {
     method: 'POST',
     body: formData
@@ -661,5 +705,25 @@ function handleSubmit(e) {
   });
 }
 </script>
+
+<a href="https://wa.me/17875070107" target="_blank" style="
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+  z-index: 9999;
+  transition: transform 0.2s, box-shadow 0.2s;
+" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(37,211,102,0.5)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,0.4)'" title="Escríbeme por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 </body>
 </html>
