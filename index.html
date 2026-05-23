@@ -4,17 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vende tu Propiedad por Más — Félix Silvestrini Real Estate</title>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4147185612162199');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #1e2d5a;
-    --white: #f8f4ec;
-    --red: #b07035;
-    --red-dark: #7a5c38;
-    --gray: #9a9690;
+    --black: #F5F2EC;
+    --white: #1F1F1F;
+    --red: #C6A75E;
+    --red-dark: #b8963e;
+    --gray: #6b6560;
     --light: #d8d5cf;
   }
 
@@ -33,17 +51,17 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 20px 40px;
     display: flex; justify-content: space-between; align-items: center;
-    background: linear-gradient(to bottom, rgba(30,45,90,0.97), transparent);
+    background: linear-gradient(to bottom, rgba(245,242,236,0.97), transparent);
   }
-  .logo { font-family: 'Playfair Display', serif; font-size: 19px; letter-spacing: 0.08em; color: var(--white); text-decoration: none; line-height: 1.3; }
-  .logo span { display: block; font-size: 12px; font-family: 'DM Sans', sans-serif; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); font-weight: 500; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 19px; letter-spacing: 0.08em; color: #1F1F1F; text-decoration: none; line-height: 1.3; }
+  .logo span { display: block; font-size: 12px; font-family: 'DM Sans', sans-serif; letter-spacing: 0.25em; text-transform: uppercase; color: #C6A75E; font-weight: 500; }
   .nav-cta {
-    background: var(--red); color: var(--white); border: none; padding: 10px 22px;
+    background: #C6A75E; color: #1F1F1F; border: none; padding: 10px 22px;
     font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0.06em;
     cursor: pointer; text-transform: uppercase; font-weight: 500;
     text-decoration: none; transition: background 0.2s;
   }
-  .nav-cta:hover { background: var(--red-dark); }
+  .nav-cta:hover { background: #b8963e; }
 
   /* HERO */
   .hero {
@@ -51,23 +69,23 @@
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: 120px 40px 80px;
     position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(31,31,31,0.12);
   }
   .hero-bg {
     position: absolute; inset: 0;
     background:
-      linear-gradient(160deg, rgba(196,18,48,0.12) 0%, transparent 50%),
-      linear-gradient(to bottom, transparent 40%, rgba(10,10,10,0.95) 100%);
+      linear-gradient(160deg, rgba(198,167,94,0.1) 0%, transparent 50%),
+      linear-gradient(to bottom, transparent 30%, rgba(245,242,236,0.95) 100%);
   }
   .hero-grid {
-    position: absolute; inset: 0; opacity: 0.04;
-    background-image: linear-gradient(rgba(247,244,239,0.5) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(247,244,239,0.5) 1px, transparent 1px);
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: linear-gradient(rgba(31,31,31,0.15) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(31,31,31,0.15) 1px, transparent 1px);
     background-size: 60px 60px;
   }
   .hero-eyebrow {
     font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--red); font-weight: 500; margin-bottom: 28px;
+    color: #C6A75E; font-weight: 500; margin-bottom: 28px;
     position: relative;
     display: flex; align-items: center; gap: 12px;
   }
@@ -80,11 +98,12 @@
     letter-spacing: -0.02em;
     position: relative;
     margin-bottom: 40px;
+    color: #1F1F1F;
   }
   .hero h1 em { font-style: italic; color: var(--red); }
   .hero-sub {
     font-size: clamp(15px, 1.8vw, 18px);
-    color: rgba(247,244,239,0.6);
+    color: #1F1F1F !important;
     max-width: 500px;
     line-height: 1.7;
     position: relative;
@@ -92,7 +111,7 @@
   }
   .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; position: relative; }
   .btn-primary {
-    background: var(--red); color: var(--white);
+    background: #C6A75E; color: #1F1F1F;
     padding: 18px 36px; font-size: 14px; font-weight: 500;
     letter-spacing: 0.06em; text-transform: uppercase;
     border: none; cursor: pointer; text-decoration: none;
@@ -100,16 +119,16 @@
   }
   .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
   .btn-ghost {
-    color: var(--white); font-size: 13px; letter-spacing: 0.08em;
-    text-transform: uppercase; opacity: 0.5;
-    text-decoration: none; border-bottom: 1px solid rgba(247,244,239,0.3);
-    padding-bottom: 2px; transition: opacity 0.2s;
+    color: #1F1F1F !important; font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 1;
+    text-decoration: none; border-bottom: 2px solid #1F1F1F;
+    padding-bottom: 2px; transition: opacity 0.2s; font-weight: 600;
   }
-  .btn-ghost:hover { opacity: 1; }
+  .btn-ghost:hover { opacity: 0.7; }
 
   /* TICKER */
   .ticker {
-    background: #1e2d5a;
+    background: #2C2C2C;
     padding: 14px 0;
     overflow: hidden;
     white-space: nowrap;
@@ -126,18 +145,18 @@
   .section { padding: 100px 40px; }
   .section-label {
     font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--red); font-weight: 500; margin-bottom: 60px;
+    color: #C6A75E; font-weight: 500; margin-bottom: 60px;
     display: flex; align-items: center; gap: 12px;
   }
   .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--red); }
 
   .resultados-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(31,31,31,0.12);
   }
   .resultado-card {
     padding: 36px 32px;
-    border-right: 1px solid rgba(255,255,255,0.08);
+    border-right: 1px solid rgba(31,31,31,0.12);
     position: relative; overflow: hidden;
     transition: background 0.3s;
   }
@@ -145,20 +164,20 @@
   .resultado-card:last-child { border-right: none; }
   .resultado-lugar {
     font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gray); margin-bottom: 20px;
+    color: #6b6560; margin-bottom: 20px;
   }
   .resultado-precio {
-    font-size: 13px; color: rgba(247,244,239,0.4);
+    font-size: 13px; color: rgba(31,31,31,0.45);
     margin-bottom: 8px; font-weight: 300;
   }
   .resultado-cierre {
     font-family: 'Playfair Display', serif;
-    font-size: 32px; font-weight: 700; color: var(--white);
+    font-size: 32px; font-weight: 700; color: #1F1F1F;
     margin-bottom: 12px;
   }
   .resultado-badge {
     display: inline-block;
-    background: rgba(196,18,48,0.15); color: var(--red);
+    background: rgba(198,167,94,0.15); color: #C6A75E;
     font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
     padding: 4px 10px; text-transform: uppercase;
   }
@@ -168,48 +187,49 @@
     padding: 0 40px 100px;
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 1px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(31,31,31,0.12);
+    border-bottom: 1px solid rgba(31,31,31,0.12);
   }
   .stat-block {
     padding: 60px 40px;
-    border-right: 1px solid rgba(255,255,255,0.08);
+    border-right: 1px solid rgba(31,31,31,0.12);
   }
   .stat-block:last-child { border-right: none; }
   .stat-num {
     font-family: 'Playfair Display', serif;
     font-size: clamp(42px, 6vw, 72px);
-    font-weight: 900; color: var(--white);
+    font-weight: 900; color: #1F1F1F;
     line-height: 1; margin-bottom: 8px;
   }
-  .stat-num em { color: var(--red); font-style: normal; }
-  .stat-label { font-size: 13px; color: var(--gray); letter-spacing: 0.05em; }
+  .stat-num em { color: #C6A75E; font-style: normal; }
+  .stat-label { font-size: 13px; color: #6b6560; letter-spacing: 0.05em; }
 
   /* OFERTA / PROCESO */
-  .proceso { background: rgba(255,255,255,0.03); }
+  .proceso { background: rgba(31,31,31,0.04); }
   .proceso-inner { max-width: 900px; margin: 0 auto; }
   .proceso-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(32px, 5vw, 56px);
     font-weight: 700; line-height: 1.1;
     margin-bottom: 64px;
+    color: #1F1F1F;
   }
   .proceso-title em { font-style: italic; color: var(--red); }
   .proceso-steps { display: flex; flex-direction: column; gap: 0; }
   .step {
     display: grid; grid-template-columns: 64px 1fr;
     gap: 32px; padding: 36px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(31,31,31,0.12);
     align-items: start;
   }
   .step:last-child { border-bottom: none; }
   .step-num {
     font-family: 'Playfair Display', serif;
     font-size: 48px; font-weight: 900;
-    color: rgba(196,18,48,0.25); line-height: 1;
+    color: rgba(198,167,94,0.35); line-height: 1;
   }
-  .step-title { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
-  .step-desc { font-size: 15px; color: rgba(247,244,239,0.5); line-height: 1.7; }
+  .step-title { font-size: 18px; font-weight: 500; margin-bottom: 10px; color: #1F1F1F; }
+  .step-desc { font-size: 15px; color: rgba(31,31,31,0.6); line-height: 1.7; }
 
   /* ALCANCE */
   .alcance-block {
@@ -221,21 +241,22 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(30px, 4vw, 48px);
     font-weight: 700; line-height: 1.15; margin-bottom: 20px;
+    color: #1F1F1F;
   }
   .alcance-text h2 em { font-style: italic; color: var(--red); }
-  .alcance-text p { font-size: 15px; color: rgba(247,244,239,0.55); line-height: 1.75; }
+  .alcance-text p { font-size: 15px; color: rgba(31,31,31,0.6); line-height: 1.75; }
   .alcance-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .alcance-num-card {
     padding: 28px 24px;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(31,31,31,0.12);
   }
   .alcance-num {
     font-family: 'Playfair Display', serif;
     font-size: 36px; font-weight: 900;
-    color: var(--white); line-height: 1; margin-bottom: 6px;
+    color: #1F1F1F; line-height: 1; margin-bottom: 6px;
   }
-  .alcance-num em { color: var(--red); font-style: normal; font-size: 24px; }
-  .alcance-desc { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+  .alcance-num em { color: #C6A75E; font-style: normal; font-size: 24px; }
+  .alcance-desc { font-size: 12px; color: #6b6560; text-transform: uppercase; letter-spacing: 0.1em; }
 
   /* FORM / CTA */
   .form-section {
@@ -245,7 +266,7 @@
   .form-inner { max-width: 640px; margin: 0 auto; }
   .form-eyebrow {
     font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--red); font-weight: 500; margin-bottom: 20px;
+    color: #C6A75E; font-weight: 500; margin-bottom: 20px;
     display: flex; align-items: center; gap: 12px;
   }
   .form-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--red); }
@@ -253,7 +274,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(32px, 5vw, 52px);
     font-weight: 900; line-height: 1.05;
-    margin-bottom: 12px; color: #1e2d5a;
+    margin-bottom: 12px; color: #1F1F1F;
   }
   .form-title em { font-style: italic; color: var(--red); }
   .form-sub { font-size: 15px; color: #3d4f6a; margin-bottom: 48px; line-height: 1.6; }
@@ -275,44 +296,44 @@
   .form-group textarea { min-height: 100px; resize: vertical; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .btn-submit {
-    width: 100%; background: #1e2d5a; color: #f8f4ec;
+    width: 100%; background: #2C2C2C; color: #F5F2EC;
     border: none; padding: 20px; font-family: 'DM Sans', sans-serif;
     font-size: 14px; font-weight: 500; letter-spacing: 0.1em;
     text-transform: uppercase; cursor: pointer;
     transition: background 0.2s; margin-top: 8px;
   }
-  .btn-submit:hover { background: var(--red); }
+  .btn-submit:hover { background: #C6A75E; color: #1F1F1F; }
   .form-note { font-size: 12px; color: #999; text-align: center; margin-top: 16px; }
 
 
   /* TESTIMONIOS */
-  .testimonios { padding: 100px 40px; background: rgba(0,0,0,0.15); }
+  .testimonios { padding: 100px 40px; background: rgba(31,31,31,0.05); }
   .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 0; }
   .testimonio-card {
-    background: var(--black); border: 1px solid rgba(255,255,255,0.08);
+    background: var(--black); border: 1px solid rgba(31,31,31,0.12);
     padding: 40px 36px; position: relative;
   }
   .testimonio-quote {
     font-family: 'Playfair Display', serif;
     font-size: 64px; line-height: 0.6;
-    color: var(--red); margin-bottom: 20px; display: block;
+    color: #C6A75E; margin-bottom: 20px; display: block;
     font-weight: 900;
   }
   .testimonio-text {
-    font-size: 15px; line-height: 1.75; color: rgba(247,244,239,0.75);
+    font-size: 15px; line-height: 1.75; color: rgba(31,31,31,0.75);
     margin-bottom: 28px; font-style: italic;
   }
-  .testimonio-autor { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; color: var(--red); }
-  .testimonio-detalle { font-size: 12px; color: var(--gray); margin-top: 4px; }
+  .testimonio-autor { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; color: #C6A75E; }
+  .testimonio-detalle { font-size: 12px; color: #6b6560; margin-top: 4px; }
 
   /* FOOTER */
   footer {
-    padding: 40px; border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 40px; border-top: 1px solid rgba(31,31,31,0.12);
     display: flex; justify-content: space-between; align-items: center;
     flex-wrap: wrap; gap: 16px;
   }
-  footer p { font-size: 12px; color: var(--gray); }
-  footer a { color: var(--gray); text-decoration: none; }
+  footer p { font-size: 12px; color: #6b6560; }
+  footer a { color: #6b6560; text-decoration: none; }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
@@ -329,6 +350,10 @@
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .hero { padding: 100px 20px 60px; }
+    .hero .felix-foto { 
+      width: 140px; height: 140px; 
+      right: 20px; bottom: 60px; 
+    }
     .section { padding: 60px 20px; }
     .stats-section { grid-template-columns: 1fr 1fr; padding: 0 20px 60px; }
     .stat-block { padding: 40px 20px; }
@@ -346,7 +371,7 @@
   <a href="#" class="logo">
     Félix Silvestrini
     <span>Real Estate · Puerto Rico</span>
-    <span style="font-size:11px;letter-spacing:0.15em;color:rgba(247,244,239,0.55);text-transform:uppercase;">Lic. C-23200</span>
+    <span style="font-size:11px;letter-spacing:0.15em;color:rgba(31,31,31,0.5);text-transform:uppercase;">Lic. C-23200</span>
   </a>
   <a href="#analisis" class="nav-cta">Análisis estratégico gratis</a>
 </nav>
@@ -355,6 +380,25 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+
+  <!-- Foto circular flotante -->
+  <div style="
+    position: absolute;
+    right: 80px;
+    bottom: 160px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #C6A75E;
+    box-shadow: 0 8px 40px rgba(31,31,31,0.15);
+    z-index: 10;
+  ">
+    <img src="https://www.vendotucasapr.com/felix-foto.png"
+      alt="Félix Silvestrini — Agente de Bienes Raíces Puerto Rico"
+      style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+  </div>
+
   <p class="hero-eyebrow fade-up">Vendedores en Puerto Rico</p>
   <h1 class="fade-up delay-1">
     Vendemos<br>
@@ -611,7 +655,7 @@
 
 
 <!-- COMPRADORES -->
-<section style="padding: 100px 40px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.08);">
+<section style="padding: 100px 40px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(31,31,31,0.12);">
   <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
     <div>
       <p style="font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
@@ -624,22 +668,22 @@
       <p style="font-size: 15px; color: rgba(247,244,239,0.55); line-height: 1.75; margin-bottom: 36px;">
         Tenemos propiedades disponibles en toda la isla — residencial, comercial y terrenos. Encuentra tu próxima inversión o el hogar de tus sueños.
       </p>
-      <a href="https://agent.kwpuertorico.com/felixsilvestrini" target="_blank" style="display:inline-block;background:#f8f4ec;color:#1e2d5a;padding:18px 36px;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Ver propiedades disponibles →</a>
+      <a href="https://agent.kwpuertorico.com/felixsilvestrini" target="_blank" style="display:inline-block;background:#2C2C2C;color:#C6A75E;padding:18px 36px;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Ver propiedades disponibles →</a>
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; min-height: 100px;">
+      <div style="padding: 28px 24px; border: 1px solid rgba(31,31,31,0.12); display: flex; align-items: center; justify-content: center; min-height: 100px;">
         <img src="https://www.vendotucasapr.com/logo-felix.svg" alt="Felix Silvestrini Real Estate" style="width: 100%; max-width: 140px; object-fit: contain;">
       </div>
-      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; min-height: 100px;">
+      <div style="padding: 28px 24px; border: 1px solid rgba(31,31,31,0.12); display: flex; align-items: center; justify-content: center; min-height: 100px;">
         <img src="https://www.vendotucasapr.com/logo-kw.svg" alt="Keller Williams Puerto Rico" style="width: 100%; max-width: 140px; object-fit: contain;">
       </div>
-      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08);">
-        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--white); line-height: 1; margin-bottom: 8px;">PR</p>
-        <p style="font-size: 14px; color: rgba(247,244,239,0.65); text-transform: uppercase; letter-spacing: 0.08em;">Toda la isla</p>
+      <div style="padding: 28px 24px; border: 1px solid rgba(31,31,31,0.12);">
+        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: #1F1F1F; line-height: 1; margin-bottom: 8px;">PR</p>
+        <p style="font-size: 14px; color: rgba(31,31,31,0.65); text-transform: uppercase; letter-spacing: 0.08em;">Toda la isla</p>
       </div>
-      <div style="padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08);">
-        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--white); line-height: 1; margin-bottom: 8px;">787</p>
-        <p style="font-size: 14px; color: rgba(247,244,239,0.65); text-transform: uppercase; letter-spacing: 0.08em;">507-0107</p>
+      <div style="padding: 28px 24px; border: 1px solid rgba(31,31,31,0.12);">
+        <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: #1F1F1F; line-height: 1; margin-bottom: 8px;">787</p>
+        <p style="font-size: 14px; color: rgba(31,31,31,0.65); text-transform: uppercase; letter-spacing: 0.08em;">507-0107</p>
       </div>
     </div>
   </div>
@@ -651,16 +695,16 @@
 </section>
 
 <!-- SORO SEO BLOG -->
-<div style="padding: 60px 40px; border-top: 1px solid rgba(255,255,255,0.08);">
+<div style="padding: 60px 40px; border-top: 1px solid rgba(31,31,31,0.12);">
   <style>
     #soro-blog, #soro-blog * {
-      color: #f8f4ec !important;
+      color: #1F1F1F !important;
     }
     #soro-blog a {
-      color: #b07035 !important;
+      color: #C6A75E !important;
     }
     #soro-blog a:hover {
-      color: #f8f4ec !important;
+      color: #1F1F1F !important;
     }
   </style>
   <div id="soro-blog"></div>
@@ -670,7 +714,7 @@
 <!-- FOOTER -->
 <footer>
   <div>
-    <p style="font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 2px;">Félix Silvestrini Real Estate</p>
+    <p style="font-family: 'Playfair Display', serif; font-size: 16px; color: #1F1F1F; margin-bottom: 2px;">Félix Silvestrini Real Estate</p>
     <p style="font-size: 11px; color: var(--gray); margin-bottom: 4px; letter-spacing: 0.1em;">Lic. C-23200</p>
     <p>Puerto Rico · Toda la isla · (787) 507-0107</p>
   </div>
