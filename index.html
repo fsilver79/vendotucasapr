@@ -349,10 +349,15 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
+    .logo { font-size: 14px; }
+    .logo span { font-size: 9px; letter-spacing: 0.12em; }
     .hero { padding: 100px 20px 60px; }
-    .hero .felix-foto { 
-      width: 140px; height: 140px; 
-      right: 20px; bottom: 60px; 
+    .hero > div[style*="border-radius: 50%"] {
+      width: 120px !important;
+      height: 120px !important;
+      top: 80px !important;
+      right: 16px !important;
+      bottom: auto !important;
     }
     .section { padding: 60px 20px; }
     .stats-section { grid-template-columns: 1fr 1fr; padding: 0 20px 60px; }
@@ -384,8 +389,8 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
   <!-- Foto circular flotante -->
   <div style="
     position: absolute;
-    right: 80px;
-    bottom: 160px;
+    right: 40px;
+    top: 120px;
     width: 260px;
     height: 260px;
     border-radius: 50%;
