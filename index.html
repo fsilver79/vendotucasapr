@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vende tu Propiedad por Más — Félix Silvestrini Real Estate</title>
+<link rel="canonical" href="https://www.vendotucasapr.com/">
+<link rel="preload" as="image" href="https://www.vendotucasapr.com/felix-foto.webp" type="image/webp" fetchpriority="high">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Vende tu Propiedad por Más | Félix Silvestrini Real Estate">
@@ -20,6 +22,45 @@
 <!-- SEO -->
 <meta name="description" content="Félix Silvestrini Real Estate — Agente inmobiliario en Puerto Rico. Vendemos su propiedad por más. Análisis estratégico gratuito. Toda la isla. Lic. C-23200.">
 <meta name="keywords" content="agente inmobiliario Puerto Rico, vender casa Puerto Rico, bienes raíces PR, corredor bienes raíces, Felix Silvestrini Real Estate">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["RealEstateAgent", "LocalBusiness"],
+  "@id": "https://www.vendotucasapr.com/#real-estate-agent",
+  "name": "Félix Silvestrini Real Estate",
+  "url": "https://www.vendotucasapr.com/",
+  "image": "https://www.vendotucasapr.com/felix-foto.png",
+  "telephone": "+17875070107",
+  "email": "fsilvestrini@kellerwilliamspr.com",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Puerto Rico Real Estate License",
+    "value": "C-23200"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "PR",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Puerto Rico"
+  },
+  "serviceArea": {
+    "@type": "State",
+    "name": "Puerto Rico"
+  },
+  "parentOrganization": {
+    "@type": "RealEstateAgent",
+    "name": "Keller Williams Puerto Rico",
+    "url": "https://www.kwpuertorico.com/"
+  },
+  "sameAs": [
+    "https://www.instagram.com/felixsilvestrinirealestate",
+    "https://www.facebook.com/felixsilvestrinirealestate"
+  ]
+}
+</script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRZ6ZMHBHB"></script>
@@ -425,9 +466,13 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
     box-shadow: 0 8px 40px rgba(31,31,31,0.15);
     z-index: 10;
   ">
-    <img src="https://www.vendotucasapr.com/felix-foto.png"
-      alt="Félix Silvestrini — Agente de Bienes Raíces Puerto Rico"
-      style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    <picture>
+      <source srcset="https://www.vendotucasapr.com/felix-foto.webp" type="image/webp">
+      <img src="https://www.vendotucasapr.com/felix-foto.png"
+        alt="Félix Silvestrini — Agente de Bienes Raíces Puerto Rico"
+        width="260" height="260" decoding="async" fetchpriority="high"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </picture>
   </div>
 
   <p class="hero-eyebrow fade-up">Vendedores en Puerto Rico</p>
@@ -628,25 +673,25 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
     <form onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-group">
-          <label>Nombre completo</label>
+          <label for="f-nombre">Nombre completo</label>
           <input type="text" id="f-nombre" placeholder="Juan García" required>
         </div>
         <div class="form-group">
-          <label>Teléfono / WhatsApp</label>
+          <label for="f-telefono">Teléfono / WhatsApp</label>
           <input type="tel" id="f-telefono" placeholder="(787) 000-0000" required>
         </div>
       </div>
       <div class="form-group">
-        <label>Correo electrónico</label>
+        <label for="f-email">Correo electrónico</label>
         <input type="email" id="f-email" placeholder="juan@correo.com" required>
       </div>
       <div class="form-group">
-        <label>Dirección de la propiedad</label>
+        <label for="f-direccion">Dirección de la propiedad</label>
         <input type="text" id="f-direccion" placeholder="Urb., calle, número · Pueblo, PR" required>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>Tipo de propiedad</label>
+          <label for="f-tipo">Tipo de propiedad</label>
           <select id="f-tipo" required>
             <option value="" disabled selected>Seleccionar...</option>
             <option>Casa residencial</option>
@@ -658,7 +703,7 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
           </select>
         </div>
         <div class="form-group">
-          <label>¿Cuándo piensa vender?</label>
+          <label for="f-cuando">¿Cuándo piensa vender?</label>
           <select id="f-cuando">
             <option value="" disabled selected>Seleccionar...</option>
             <option>Lo antes posible</option>
@@ -669,17 +714,18 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
         </div>
       </div>
       <div class="form-group">
-        <label>¿Algo más que deba saber? (opcional)</label>
+        <label for="f-notas">¿Algo más que deba saber? (opcional)</label>
         <textarea id="f-notas" placeholder="Condición de la propiedad, hipoteca pendiente, situación especial..."></textarea>
       </div>
       <button type="submit" class="btn-submit">✅ Completar y solicitar mi análisis estratégico gratis →</button>
+      <p id="form-error" role="alert" style="display:none; font-size: 13px; color: #8a1f1f; text-align: center; margin-top: 14px; line-height: 1.5;">No pudimos enviar su solicitud en este momento. Por favor intente nuevamente o escríbanos por WhatsApp al (787) 507-0107.</p>
       <p class="form-note">Sus datos son confidenciales. Le contactaremos en menos de 24 horas.</p>
     </form>
 
     <div id="success-msg" style="display:none; text-align: center; padding: 60px 0;">
       <p style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: #1e2d5a; margin-bottom: 12px;">¡Recibido!</p>
       <p style="font-size: 15px; color: #666; line-height: 1.7;">Le contactaremos en las próximas 24 horas.<br>Mientras tanto, puede escribirnos directamente por WhatsApp.</p>
-      <a href="https://wa.me/17875070107" style="display: inline-block; margin-top: 28px; background: #1e2d5a; color: #f8f4ec; padding: 16px 32px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;"><a href="tel:+17875070107" style="color:inherit;text-decoration:none;">(787) 507-0107</a> · Escribir por WhatsApp →</a>
+      <a href="https://wa.me/17875070107" style="display: inline-block; margin-top: 28px; background: #1e2d5a; color: #f8f4ec; padding: 16px 32px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">(787) 507-0107 · Escribir por WhatsApp →</a>
     </div>
   </div>
 </section>
@@ -687,7 +733,7 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
 
 <!-- COMPRADORES -->
 <section style="padding: 100px 40px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(31,31,31,0.12);">
-  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+  <div id="compradores-grid" style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
     <div>
       <p style="font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
         <span style="display:block;width:32px;height:1px;background:var(--red);"></span>
@@ -703,10 +749,10 @@ src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
       <div style="padding: 28px 24px; border: 1px solid rgba(31,31,31,0.12); display: flex; align-items: center; justify-content: center; min-height: 100px;">
-        <img src="https://www.vendotucasapr.com/logo-felix.svg" alt="Felix Silvestrini Real Estate" style="width: 100%; max-width: 140px; object-fit: contain;">
+        <img src="https://www.vendotucasapr.com/logo-felix.svg" alt="Felix Silvestrini Real Estate" width="140" height="140" loading="lazy" decoding="async" style="width: 100%; max-width: 140px; object-fit: contain;">
       </div>
       <div style="padding: 28px 24px; border: 1px solid rgba(31,31,31,0.12); display: flex; align-items: center; justify-content: center; min-height: 100px;">
-        <img src="https://www.vendotucasapr.com/logo-kw.svg" alt="Keller Williams Puerto Rico" style="width: 100%; max-width: 140px; object-fit: contain;">
+        <img src="https://www.vendotucasapr.com/logo-kw.svg" alt="Keller Williams Puerto Rico" width="140" height="140" loading="lazy" decoding="async" style="width: 100%; max-width: 140px; object-fit: contain;">
       </div>
       <div style="padding: 28px 24px; border: 1px solid rgba(31,31,31,0.12);">
         <p style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: #1F1F1F; line-height: 1; margin-bottom: 8px;">PR</p>
@@ -826,6 +872,8 @@ function handleSubmit(e) {
   e.preventDefault();
 
   var btn = document.querySelector('.btn-submit');
+  var error = document.getElementById('form-error');
+  if (error) { error.style.display = 'none'; }
   btn.textContent = 'Enviando...';
   btn.disabled = true;
 
@@ -847,11 +895,14 @@ function handleSubmit(e) {
     method: 'POST',
     body: formData
   })
-  .then(function() {
+  .then(function(response) {
+    if (!response.ok) { throw new Error('Webhook submission failed'); }
     window.location.href = '/thank-you.html';
   })
   .catch(function() {
-    window.location.href = '/thank-you.html';
+    btn.textContent = '✅ Completar y solicitar mi análisis estratégico gratis →';
+    btn.disabled = false;
+    if (error) { error.style.display = 'block'; }
   });
 }
 </script>
