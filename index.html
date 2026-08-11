@@ -1115,10 +1115,6 @@
       white-space: nowrap;
     }
 
-    .mobile-cta {
-      display: none;
-    }
-
     @media (min-width: 760px) {
       .nav-phone {
         display: inline-flex;
@@ -1165,7 +1161,6 @@
 
       body {
         font-size: 15px;
-        padding-bottom: calc(72px + env(safe-area-inset-bottom));
       }
 
       .section {
@@ -1215,27 +1210,6 @@
         justify-content: flex-start;
       }
 
-      .mobile-cta {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 44;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        padding: 10px 12px;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom));
-        background: rgba(251,250,247,0.96);
-        border-top: 1px solid var(--line-soft);
-      }
-
-      .mobile-cta .button {
-        min-height: 44px;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 0.9rem;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1590,11 +1564,6 @@
       </div>
     </div>
   </footer>
-
-  <div class="mobile-cta" aria-label="Acciones rápidas">
-    <a class="button button-primary" href="#consulta">Evaluar</a>
-    <a class="button button-outline" href="https://wa.me/17875070107" target="_blank" rel="noopener" data-track-whatsapp>WhatsApp</a>
-  </div>
 
   <script src="https://app.trysoro.com/api/embed/86d29c9f-8732-48d3-bced-54cd92e9c0ef" defer></script>
 
