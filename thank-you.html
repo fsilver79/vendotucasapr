@@ -1,208 +1,116 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¡Gracias! — Félix Silvestrini Real Estate</title>
-<link rel="canonical" href="https://www.vendotucasapr.com/thank-you.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud recibida | Félix Silvestrini Real Estate</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="assets/logos/fs-mark-color.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-space: #1d2839;
+      --fresh-sky: #3ea5dd;
+      --golden-bronze: #d4a950;
+      --surface: #fbfaf7;
+      --text-muted: #4c5b68;
+      --radius: 8px;
+    }
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRZ6ZMHBHB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WRZ6ZMHBHB');
-  // Registrar conversión
-  gtag('event', 'conversion', { 'event_category': 'lead', 'event_label': 'analisis_estrategico' });
-</script>
+    * {
+      box-sizing: border-box;
+    }
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4147185612162199');
-fbq('track', 'PageView');
-fbq('track', 'Lead');
-</script>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--surface);
+      color: var(--deep-space);
+      font-family: "Libre Baskerville", Georgia, serif;
+      line-height: 1.65;
+      padding: 32px 18px;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    main {
+      width: min(100%, 760px);
+      text-align: center;
+    }
 
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #F5F2EC;
-    color: #1F1F1F;
-    font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: #1F1F1F;
-    text-decoration: none;
-    margin-bottom: 60px;
-    display: block;
-  }
-  .logo span {
-    display: block;
-    font-size: 11px;
-    font-family: 'DM Sans', sans-serif;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #C6A75E;
-    font-weight: 500;
-    margin-top: 4px;
-  }
-  .check {
-    width: 72px;
-    height: 72px;
-    background: #C6A75E;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 32px;
-    font-size: 32px;
-  }
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 6vw, 64px);
-    font-weight: 900;
-    line-height: 1.05;
-    margin-bottom: 20px;
-  }
-  h1 em { font-style: italic; color: #C6A75E; }
-  p {
-    font-size: 17px;
-    color: rgba(31,31,31,0.65);
-    line-height: 1.75;
-    max-width: 480px;
-    margin: 0 auto 48px;
-  }
-  .actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-  .btn-primary {
-    background: #C6A75E;
-    color: #1F1F1F;
-    padding: 16px 32px;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: #b8963e; }
-  .btn-ghost {
-    color: #1F1F1F;
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-bottom: 1.5px solid rgba(31,31,31,0.4);
-    padding-bottom: 2px;
-    display: flex;
-    align-items: center;
-  }
-  .steps {
-    display: flex;
-    gap: 32px;
-    margin-top: 64px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 700px;
-  }
-  .step {
-    flex: 1;
-    min-width: 180px;
-    padding: 28px 24px;
-    border: 1px solid rgba(31,31,31,0.1);
-    background: white;
-    text-align: left;
-  }
-  .step-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 900;
-    color: rgba(198,167,94,0.4);
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-  .step-title { font-size: 14px; font-weight: 600; color: #1F1F1F; margin-bottom: 6px; }
-  .step-desc { font-size: 13px; color: rgba(31,31,31,0.55); line-height: 1.6; }
+    img {
+      width: 220px;
+      height: auto;
+      margin: 0 auto 34px;
+    }
 
-  /* WhatsApp flotante */
-  .wa-float {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    width: 58px;
-    height: 58px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
-    z-index: 9999;
-  }
-</style>
+    p {
+      color: var(--text-muted);
+      font-size: 18px;
+      margin: 0 auto 26px;
+      max-width: 620px;
+    }
+
+    h1 {
+      font-family: "League Spartan", Arial, sans-serif;
+      font-size: clamp(42px, 8vw, 74px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    a {
+      border-radius: var(--radius);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 18px 11px;
+      font-family: "League Spartan", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .primary {
+      background: var(--golden-bronze);
+      color: var(--deep-space);
+    }
+
+    .secondary {
+      border: 1px solid rgba(29, 40, 57, 0.22);
+      color: var(--deep-space);
+    }
+
+    .note {
+      font-size: 14px;
+      margin-top: 28px;
+    }
+  </style>
 </head>
 <body>
-
-<a href="/" class="logo">
-  Félix Silvestrini
-  <span>Real Estate · Puerto Rico</span>
-</a>
-
-<div class="check">✓</div>
-
-<h1>¡Solicitud<br>recibida <em>con éxito!</em></h1>
-
-<p>Gracias por confiar en Félix Silvestrini Real Estate. Te contactaremos en menos de 24 horas con tu análisis estratégico personalizado.</p>
-
-<div class="actions">
-  <a href="https://wa.me/17875070107" class="btn-primary">Escribir por WhatsApp →</a>
-  <a href="/" class="btn-ghost">Volver al inicio</a>
-</div>
-
-<div class="steps">
-  <div class="step">
-    <p class="step-num">01</p>
-    <p class="step-title">Revisamos tu solicitud</p>
-    <p class="step-desc">Analizamos los detalles de tu propiedad y preparamos tu análisis.</p>
-  </div>
-  <div class="step">
-    <p class="step-num">02</p>
-    <p class="step-title">Te contactamos</p>
-    <p class="step-desc">En menos de 24 horas recibirás una llamada o mensaje de Félix.</p>
-  </div>
-  <div class="step">
-    <p class="step-num">03</p>
-    <p class="step-title">Definimos la estrategia</p>
-    <p class="step-desc">Juntos creamos el plan para vender tu propiedad al mejor precio.</p>
-  </div>
-</div>
-
-<!-- WhatsApp flotante -->
-<a href="https://wa.me/17875070107" target="_blank" class="wa-float" title="Escríbeme por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
+  <main>
+    <img src="assets/logos/fs-logo-color.png" alt="Félix Silvestrini Real Estate" width="320" height="83">
+    <h1>Solicitud recibida.</h1>
+    <p>Gracias por compartir la información de su propiedad. Félix Silvestrini Real Estate revisará su solicitud para orientarle con claridad sobre el próximo paso.</p>
+    <div class="actions">
+      <a class="primary" href="index.html">Volver al inicio</a>
+      <a class="secondary" href="https://wa.me/17875070107" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+    <p class="note">Resultados pasados no garantizan resultados futuros. Cada propiedad requiere evaluación individual.</p>
+  </main>
 </body>
 </html>
