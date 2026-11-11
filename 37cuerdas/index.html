@@ -34,7 +34,7 @@
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
   <!-- META PIXEL -->
   <script>
@@ -175,19 +175,19 @@
   <style>
     /* ─── TOKENS ─── */
     :root {
-      --negro: #1F1F1F;
-      --dorado: #C6A75E;
-      --dorado-light: #D7BE84;
-      --crema: #F5F2EC;
-      --beige: #E8E1D5;
+      --negro: #1D2839;
+      --dorado: #D4A950;
+      --dorado-light: #E0CCAF;
+      --crema: #FBFAF7;
+      --beige: #F2EADF;
       --blanco: #FFFFFF;
-      --rojo-acento: #8B1A1A;
+      --rojo-acento: #D4A950;
       --verde-wa: #25D366;
-      --gris-texto: #4A4A4A;
-      --gris-claro: #F0EDE8;
+      --gris-texto: #4C5B68;
+      --gris-claro: #F2EADF;
 
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body: 'DM Sans', system-ui, sans-serif;
+      --ff-display: 'Libre Baskerville', Georgia, serif;
+      --ff-body: 'League Spartan', system-ui, sans-serif;
 
       --radius: 4px;
       --radius-lg: 12px;
@@ -200,7 +200,7 @@
 
     /* ─── RESET ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
     body {
       font-family: var(--ff-body);
       font-size: 16px;
@@ -230,7 +230,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      border-bottom: 1px solid rgba(198,167,94,0.3);
+      border-bottom: 1px solid rgba(212,169,80,0.3);
     }
     .sticky-bar__text { opacity: 0.85; }
     .sticky-bar__cta {
@@ -261,10 +261,10 @@
       position: sticky;
       top: 37px;
       z-index: 900;
-      background: rgba(31,31,31,0.96);
+      background: rgba(29,40,57,0.96);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(198,167,94,0.2);
+      border-bottom: 1px solid rgba(212,169,80,0.2);
       padding: 14px clamp(20px,5vw,48px);
       display: flex;
       align-items: center;
@@ -273,9 +273,10 @@
     }
     .site-header__logos { display: flex; align-items: center; gap: 16px; }
     .site-header__logos img { height: 32px; width: auto; filter: brightness(0) invert(1); }
+    .site-header__logos img.fs-logo, .footer__logos img.fs-logo { height: 40px; filter: none; opacity: 1; }
     .site-header__logos .sep {
       width: 1px; height: 24px;
-      background: rgba(198,167,94,0.35);
+      background: rgba(212,169,80,0.35);
     }
     .site-header__cta {
       display: flex;
@@ -303,8 +304,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 50% 0%, rgba(198,167,94,0.16) 0%, rgba(31,31,31,0) 42%),
-        linear-gradient(to bottom, #2a2822 0%, #1F1F1F 58%, #171717 100%);
+        radial-gradient(circle at 50% 0%, rgba(212,169,80,0.16) 0%, rgba(29,40,57,0) 42%),
+        linear-gradient(to bottom, #26354d 0%, #1D2839 58%, #18222f 100%);
     }
     .hero__content {
       position: relative;
@@ -350,7 +351,7 @@
       font-family: var(--ff-display);
       font-size: clamp(22px, 4vw, 36px);
       font-weight: 400;
-      color: rgba(245,242,236,0.75);
+      color: rgba(213,233,247,0.75);
       margin-bottom: 28px;
       letter-spacing: 0.01em;
     }
@@ -359,7 +360,7 @@
       align-items: center;
       gap: 6px;
       font-size: 14px;
-      color: rgba(245,242,236,0.65);
+      color: rgba(213,233,247,0.65);
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -398,7 +399,7 @@
     .btn--ghost {
       background: transparent;
       color: var(--crema);
-      border: 1px solid rgba(245,242,236,0.35);
+      border: 1px solid rgba(213,233,247,0.35);
     }
     .btn--ghost:hover { border-color: var(--dorado); color: var(--dorado); }
     .btn--wa {
@@ -417,7 +418,7 @@
     .btn--dark {
       background: var(--negro);
       color: var(--crema);
-      border: 1px solid rgba(198,167,94,0.3);
+      border: 1px solid rgba(212,169,80,0.3);
     }
     .btn--dark:hover { border-color: var(--dorado); color: var(--dorado); }
     .btn--full { width: 100%; }
@@ -454,7 +455,7 @@
       color: var(--gris-texto);
       max-width: 600px;
     }
-    .section-desc--light { color: rgba(245,242,236,0.75); }
+    .section-desc--light { color: rgba(213,233,247,0.75); }
     .divider {
       width: 48px; height: 2px;
       background: var(--dorado);
@@ -476,7 +477,7 @@
     }
     .selector__sub {
       font-size: 16px;
-      color: rgba(245,242,236,0.6);
+      color: rgba(213,233,247,0.6);
       margin-bottom: 40px;
     }
     .selector__cards {
@@ -486,7 +487,7 @@
     }
     .sel-card {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(198,167,94,0.2);
+      border: 1px solid rgba(212,169,80,0.2);
       border-radius: var(--radius-lg);
       padding: 28px 20px;
       cursor: pointer;
@@ -498,7 +499,7 @@
     }
     .sel-card:hover, .sel-card:focus {
       border-color: var(--dorado);
-      background: rgba(198,167,94,0.07);
+      background: rgba(212,169,80,0.07);
       transform: translateY(-2px);
     }
     .sel-card__num {
@@ -513,7 +514,7 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(245,242,236,0.5);
+      color: rgba(213,233,247,0.5);
     }
     .sel-card__name {
       font-size: 15px;
@@ -523,7 +524,7 @@
     }
     .sel-card__desc {
       font-size: 13px;
-      color: rgba(245,242,236,0.55);
+      color: rgba(213,233,247,0.55);
       line-height: 1.5;
     }
     .sel-card__arrow {
@@ -618,7 +619,7 @@
     .feat-item__icon {
       width: 20px; height: 20px;
       border-radius: 50%;
-      background: rgba(198,167,94,0.15);
+      background: rgba(212,169,80,0.15);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -674,7 +675,7 @@
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(245,242,236,0.5);
+      color: rgba(213,233,247,0.5);
       margin-bottom: 24px;
     }
     .combo__headline {
@@ -687,7 +688,7 @@
     }
     .combo__desc {
       font-size: 17px;
-      color: rgba(245,242,236,0.65);
+      color: rgba(213,233,247,0.65);
       max-width: 580px;
       margin: 0 auto 40px;
       line-height: 1.7;
@@ -701,7 +702,7 @@
     }
     .combo__prop {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(198,167,94,0.2);
+      border: 1px solid rgba(212,169,80,0.2);
       border-radius: var(--radius-lg);
       padding: 28px 24px;
       text-align: left;
@@ -722,7 +723,7 @@
     }
     .combo__prop-desc {
       font-size: 13px;
-      color: rgba(245,242,236,0.5);
+      color: rgba(213,233,247,0.5);
     }
     .combo__plus {
       font-family: var(--ff-display);
@@ -736,11 +737,11 @@
       align-items: center;
       gap: 12px;
       padding: 14px 24px;
-      border: 1px solid rgba(198,167,94,0.3);
+      border: 1px solid rgba(212,169,80,0.3);
       border-radius: var(--radius);
       margin-bottom: 28px;
       font-size: 14px;
-      color: rgba(245,242,236,0.7);
+      color: rgba(213,233,247,0.7);
     }
     .combo__price strong { color: var(--crema); font-weight: 600; }
     .combo__ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
@@ -767,7 +768,7 @@
       padding: 24px 20px;
       background: var(--blanco);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(198,167,94,0.15);
+      border: 1px solid rgba(212,169,80,0.15);
     }
     .attr-item__icon {
       width: 44px; height: 44px;
@@ -854,13 +855,13 @@
     }
     .uso-item {
       padding: 28px 20px;
-      border: 1px solid rgba(198,167,94,0.15);
+      border: 1px solid rgba(212,169,80,0.15);
       border-radius: var(--radius-lg);
       transition: border-color 0.2s, background 0.2s;
     }
     .uso-item:hover {
-      border-color: rgba(198,167,94,0.4);
-      background: rgba(198,167,94,0.05);
+      border-color: rgba(212,169,80,0.4);
+      background: rgba(212,169,80,0.05);
     }
     .uso-item__icon { font-size: 32px; margin-bottom: 16px; }
     .uso-item__name {
@@ -872,7 +873,7 @@
     }
     .uso-item__desc {
       font-size: 13px;
-      color: rgba(245,242,236,0.5);
+      color: rgba(213,233,247,0.5);
       line-height: 1.5;
     }
 
@@ -1013,7 +1014,7 @@
       background: var(--blanco);
       border-radius: var(--radius);
       overflow: hidden;
-      border: 1px solid rgba(198,167,94,0.15);
+      border: 1px solid rgba(212,169,80,0.15);
     }
     .faq__q {
       width: 100%;
@@ -1058,7 +1059,7 @@
       text-align: center;
       margin-top: 40px;
       padding-top: 32px;
-      border-top: 1px solid rgba(198,167,94,0.2);
+      border-top: 1px solid rgba(212,169,80,0.2);
     }
     .faq__footer p {
       font-size: 16px;
@@ -1108,7 +1109,7 @@
     .form-group input {
       width: 100%;
       padding: 14px 16px;
-      border: 1.5px solid rgba(198,167,94,0.25);
+      border: 1.5px solid rgba(212,169,80,0.25);
       border-radius: var(--radius);
       font-family: var(--ff-body);
       font-size: 16px;
@@ -1141,7 +1142,7 @@
       align-items: center;
       gap: 12px;
       padding: 14px 16px;
-      border: 1.5px solid rgba(198,167,94,0.2);
+      border: 1.5px solid rgba(212,169,80,0.2);
       border-radius: var(--radius);
       cursor: pointer;
       transition: all 0.2s;
@@ -1149,7 +1150,7 @@
     }
     .radio-opt:has(input:checked) {
       border-color: var(--dorado);
-      background: rgba(198,167,94,0.08);
+      background: rgba(212,169,80,0.08);
     }
     .radio-opt input[type="radio"] {
       width: 18px; height: 18px;
@@ -1212,7 +1213,7 @@
     /* ─── FOOTER ─── */
     footer {
       background: var(--negro);
-      border-top: 1px solid rgba(198,167,94,0.15);
+      border-top: 1px solid rgba(212,169,80,0.15);
       padding: 40px clamp(20px,5vw,48px);
     }
     .footer__inner {
@@ -1226,15 +1227,15 @@
     }
     .footer__logos { display: flex; align-items: center; gap: 20px; }
     .footer__logos img { height: 28px; width: auto; opacity: 0.85; filter: brightness(0) invert(1); }
-    .footer__logos .sep { width: 1px; height: 20px; background: rgba(198,167,94,0.25); }
-    .footer__info { font-size: 13px; color: rgba(245,242,236,0.5); line-height: 1.6; }
-    .footer__info a { color: rgba(245,242,236,0.5); }
+    .footer__logos .sep { width: 1px; height: 20px; background: rgba(212,169,80,0.25); }
+    .footer__info { font-size: 13px; color: rgba(213,233,247,0.5); line-height: 1.6; }
+    .footer__info a { color: rgba(213,233,247,0.5); }
     .footer__info a:hover { color: var(--dorado); }
     .footer__contact { display: flex; flex-direction: column; gap: 6px; }
     .footer__contact a {
       font-size: 14px;
       font-weight: 500;
-      color: rgba(245,242,236,0.7);
+      color: rgba(213,233,247,0.7);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -1338,7 +1339,7 @@
       display: flex;
       align-items: center;
       gap: 0;
-      border: 1px solid rgba(198,167,94,0.4);
+      border: 1px solid rgba(212,169,80,0.4);
       border-radius: 20px;
       overflow: hidden;
       flex-shrink: 0;
@@ -1348,7 +1349,7 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: rgba(245,242,236,0.5);
+      color: rgba(213,233,247,0.5);
       background: transparent;
       cursor: pointer;
       transition: all 0.2s;
@@ -1398,7 +1399,7 @@
 <!-- ━━━━━━━━━━━━━━━━━━━━ HEADER ━━━━━━━━━━━━━━━━━━━━ -->
 <header class="site-header" role="navigation" aria-label="Encabezado principal">
   <div class="site-header__logos">
-    <img src="../logo-felix.svg" alt="Félix Silvestrini Real Estate" width="120" height="32" />
+    <img class="fs-logo" src="../assets/logos/fs-logo-white-h.png" alt="Félix Silvestrini Real Estate" width="96" height="40" />
     <div class="sep" aria-hidden="true"></div>
     <img src="../logo-kw.svg" alt="Keller Williams Puerto Rico" width="80" height="32" />
   </div>
@@ -1753,7 +1754,7 @@
         <div role="listitem"><div class="asesor__stat-num">4/4</div><div class="asesor__stat-label"><span data-es>Cierres sobre precio lista</span><span data-en>Closed above list price</span></div></div>
       </div>
       <div class="asesor__logos">
-        <img src="../logo-felix.svg" alt="Félix Silvestrini Real Estate" height="28" />
+        <img src="../assets/logos/fs-logo-color-h.png" alt="Félix Silvestrini Real Estate" height="36" />
         <img src="../logo-kw.svg" alt="Keller Williams Puerto Rico" height="28" />
       </div>
       <p class="asesor__lic">Lic. C-23200 · Keller Williams Puerto Rico</p>
@@ -1917,7 +1918,7 @@
 <footer role="contentinfo">
   <div class="footer__inner">
     <div class="footer__logos">
-      <img src="../logo-felix.svg" alt="Félix Silvestrini Real Estate" height="28" />
+      <img class="fs-logo" src="../assets/logos/fs-logo-white-h.png" alt="Félix Silvestrini Real Estate" height="36" />
       <div class="sep" aria-hidden="true"></div>
       <img src="../logo-kw.svg" alt="Keller Williams Puerto Rico" height="28" />
     </div>
@@ -1943,18 +1944,7 @@
   </div>
 </footer>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━ BOTÓN FLOTANTE WA ━━━━━━━━━━━━━━━━━━━━ -->
-<a
-  href="https://wa.me/17875070107?text=Hola+F%C3%A9lix%2C+me+interesa+conocer+las+propiedades+en+Bo.+Rubias%2C+Yauco."
-  class="wa-float"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Contactar por WhatsApp"
-  onclick="if(typeof fbq!=='undefined'){fbq('track','Contact',{content_name:'WA Float'})}"
->
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-  <span>WhatsApp</span>
-</a>
+
 
 <!-- ━━━━━━━━━━━━━━━━━━━━ JAVASCRIPT ━━━━━━━━━━━━━━━━━━━━ -->
 <script>
@@ -2135,7 +2125,7 @@
         var parent = this.closest('.radio-opt');
         if (parent) {
           parent.style.borderColor = 'var(--dorado)';
-          parent.style.background = 'rgba(198,167,94,0.08)';
+          parent.style.background = 'rgba(212,169,80,0.08)';
         }
       }
     });
