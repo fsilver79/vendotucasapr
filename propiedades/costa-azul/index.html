@@ -153,6 +153,10 @@
   <style>
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
     .bldg img.drone{height:auto;aspect-ratio:1/1;align-self:center}
+    .file-box{display:none;border:1px dashed rgba(29,40,57,.3);border-radius:6px;padding:14px;background:#fff}
+    .file-box.show{display:block}
+    .file-box input{border:0;padding:6px 0}
+    .file-box small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
     .credit{display:flex;gap:14px;align-items:center;margin-top:22px}
     .credit img{width:72px;height:72px}
     .credit small{color:var(--muted);font-size:15px;line-height:1.35}
@@ -281,6 +285,11 @@
                 </select>
               </div>
             </div>
+            <div class="file-box" id="carta-box">
+              <label for="f-carta">Carta de pre-cualificación <span style="font-weight:500;color:var(--muted)">(opcional)</span></label>
+              <input id="f-carta" name="carta_precualificacion" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,application/pdf,image/*">
+              <small>PDF o foto, máximo 5 MB. Nos ayuda a coordinar tu visita más rápido.</small>
+            </div>
             <div><label for="f-notas">Mensaje (opcional)</label><textarea id="f-notas" name="notas" placeholder="Días u horas que te funcionan, preguntas sobre la casa..."></textarea></div>
             <p class="err" id="form-error" role="alert"></p>
             <button class="btn btn-primary" id="submit-button" type="submit">Coordinar visita</button>
@@ -316,6 +325,9 @@
     var form = document.getElementById("lead-form"), err = document.getElementById("form-error"),
         btn = document.getElementById("submit-button"), started = document.getElementById("started-at");
     started.value = String(Date.now());
+    var compra = document.getElementById("f-compra"), cartaBox = document.getElementById("carta-box"), carta = document.getElementById("f-carta");
+    function toggleCarta(){ var on = /pre-cualificado/.test(compra.value); cartaBox.classList.toggle("show", on); if(!on) carta.value = ""; }
+    compra.addEventListener("change", toggleCarta); toggleCarta();
     var params = new URLSearchParams(location.search);
     form.addEventListener("submit", function(e){
       e.preventDefault(); err.style.display = "none";
@@ -323,9 +335,14 @@
       if (Date.now() - Number(started.value) < 2500 || document.getElementById("company").value) {
         err.textContent = "No pudimos validar la solicitud. Intenta nuevamente."; err.style.display = "block"; return;
       }
+      if (carta.files.length && carta.files[0].size > 5 * 1024 * 1024) {
+        err.textContent = "La carta pesa más de 5 MB. Envíala por WhatsApp o sube una foto más liviana."; err.style.display = "block"; return;
+      }
       if (form.dataset.sending === "1") return;
       form.dataset.sending = "1"; btn.disabled = true; btn.textContent = "Enviando...";
       var fd = new FormData(form);
+      if (!carta.files.length) fd.delete("carta_precualificacion");
+      fd.append("carta_adjunta", carta.files.length ? "Sí" : "No");
       fd.append("propiedad", PROP);
       fd.append("tipo", "Comprador · Residencial");
       fd.append("direccion", "Urb. Costa Azul, Guayama");
