@@ -246,6 +246,11 @@
         <video controls preload="none" playsinline poster="img/poster.jpg" id="pres-video" style="aspect-ratio:4/5;max-width:520px">
           <source src="img/video.mp4" type="video/mp4">
         </video>
+        <h3 style="margin-top:56px;font-size:30px">Recorrido virtual</h3>
+        <p class="lead">Camina la casa completa: entrada, sala, cocina, habitaciones, baños, laundry y marquesina.</p>
+        <video controls preload="none" playsinline poster="img/recorrido-poster.jpg" id="tour-video" style="aspect-ratio:16/9;max-width:960px">
+          <source src="img/recorrido.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
@@ -324,6 +329,8 @@
     });
     var vid = document.getElementById("pres-video");
     if (vid) vid.addEventListener("play", function once(){ ev("video_play",{property:PROP}); vid.removeEventListener("play", once); });
+    var tour = document.getElementById("tour-video");
+    if (tour) tour.addEventListener("play", function once(){ ev("video_play",{property:PROP, video:"recorrido"}); tour.removeEventListener("play", once); });
 
     var form = document.getElementById("lead-form"), err = document.getElementById("form-error"),
         btn = document.getElementById("submit-button"), started = document.getElementById("started-at");
